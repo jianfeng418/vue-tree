@@ -1,7 +1,7 @@
 <template>
 	<div class='cus_vtree_wrap' @click.capture='clickNodeWrap'>
 		
-			<v-tree-item :treeData='treeData' :clickFun='clickFun' ></v-tree-item>
+			<v-tree-item :treeData='treeData' :clickFun='clickFun' :class='{tree_root_lonely:treeData.length === 1}' ></v-tree-item>
 		
 	</div>
 </template>
@@ -67,7 +67,7 @@
 		components:{'v-tree-item':{
 			name:'v-tree-item',
 			template:'<ul class="cus_tree_ul" :class="{cus_tree_ulLine:(treeData && treeData.length)}"><li v-for="item in treeData"><div class="cus_item_content" @click="clickNode(item)" @click.cus="clickFun" :id= item.id :class="{active:item.active}">'+
-			'<span class="treeExpendBtn" @click.stop="toggleNode(item)" :class="{butopen:item.expend,btnclose:!item.expend,lastLine:item.last&&!item.children}"></span>{{item.text}} </div>'+
+			'<span class="treeExpendBtn" @click.stop="toggleNode(item)" :class="{butopen:item.expend && item.children,btnclose:!item.expend && item.children,line: !item.last && !item.children,lastLine:item.last&&!item.children}"></span><span :class="item.icon"></span>{{item.text}} </div>'+
 			'<v-tree-item :treeData="item.children" v-if="item.expend" :clickFun="clickFun"></v-tree-item> </li></ul>',
 
 			methods:{
@@ -111,25 +111,46 @@
 
 	.cus_item_content span.treeExpendBtn{
 		display:inline-block;
-		width:16px;
-		height:16px;
+		width:18px;
+		height:18px;
 		margin-right:6px;
 		background-image:url('../images/zTreeStandard.png');
 		
 	}
-	.cus_item_content span.treeExpendBtn.butopen{
+	
+	li:first-child .cus_item_content span.treeExpendBtn.butopen{
+		background-position:-92px 0px
+	}
+	li .cus_item_content span.treeExpendBtn.butopen{
+		background-position:-92px -18px
+	}
+	li:last-child .cus_item_content span.treeExpendBtn.butopen{
 		background-position:-92px -36px
 	}
-	.cus_item_content span.treeExpendBtn.butopen.lastLine{
-		background-position:-56px -36px
+	ul.tree_root_lonely>li>.cus_item_content>span.treeExpendBtn.butopen{
+		background-position:-92px -54px
 	}
 
-	.cus_item_content span.treeExpendBtn.btnclose{
+	li:first-child .cus_item_content span.treeExpendBtn.btnclose{
+		background-position:-74px -0px
+	}
+	li .cus_item_content span.treeExpendBtn.btnclose{
+		background-position:-74px -18px
+	}
+	li:last-child .cus_item_content span.treeExpendBtn.btnclose{
 		background-position:-74px -36px
 	}
-	.cus_item_content span.treeExpendBtn.btnclose.lastLine{
+	ul.tree_root_lonely>li>.cus_item_content>span.treeExpendBtn.btnclose{
+		background-position:-74px -54px
+	}
+
+	.cus_item_content span.treeExpendBtn.lastLine{
 		background-position:-56px -36px
 	}
+	.cus_item_content span.treeExpendBtn.line{
+		background-position:-56px -18px
+	}
+
 
 	ul.cus_tree_ul li .cus_item_content{
 		padding:4px;
@@ -142,4 +163,21 @@
 		background:#7663f8;
 		color:white;
 	}
+
+  .folder{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-right:6px;
+    background-image:url('../images/zTreeStandard.png');
+    background-position:-110px -0px
+  }
+  .file{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    margin-right:6px;
+    background-image:url('../images/zTreeStandard.png');
+    background-position:-110px -30px
+  }
 </style>

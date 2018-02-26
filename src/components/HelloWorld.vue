@@ -33,12 +33,19 @@ export default {
       datas:[
         {text:'xiaoming',
           id:'1',
+          icon:'folder',
           children:[
               {text:'1-1',
                 id:'1-1',
+                icon:'folder',
                 children:[
                   {text:'1-1-1',
                     id:'1-1-1',
+                    icon:'file'
+
+                  },{text:'1-1-2',
+                    id:'1-1-2',
+                    icon:'file'
 
                   }]
               
@@ -46,16 +53,20 @@ export default {
         },
         {text:'hua',
           id:'2',
+          icon:'folder',
           children:[{
             text:'2-2',
-            id:'2-2'
+            id:'2-2',
+            icon:'file',
           }]
         },
         {text:'hua',
           id:'3',
+          icon:'folder',
           children:[{
             text:'3-3',
-            id:'3-3'
+            id:'3-3',
+            icon:'file',
           }]
         }
         ]
@@ -80,4 +91,6 @@ li {
 a {
   color: #42b983;
 }
+
+
 </style>
