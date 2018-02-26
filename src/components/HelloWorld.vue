@@ -1,35 +1,38 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-
-    <vtree :treeData='datas' ref='vtree' :clickFun='clickNode'></vtree>
-
+    <div class='tree'>
+      <vtree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vtree>
+    </div>
     <button @click='findSelected'>获取选中项</button>
 
   </div>
 </template>
 
 <script>
-  import mytree from './mytree'
+
   import vtree from './v-tree'
 
  
 export default {
   name: 'HelloWorld',
   methods:{
-      findParent(){
-          console.log(this.$refs)
-      },
+    
       findSelected(){
-          console.log(this.$refs.vtree.getSelectedNode());
+          console.log('you clicked' + JSON.stringify(this.$refs.vtree.getSelectedNode()));
+          if(this.checkbox){
+               console.log('you choosed ' + JSON.stringify(this.$refs.vtree.getCheckedNodes()))
+          }
+         
       },
-      clickNode($event){
-        console.log('you clicked '+ $event.target.id)
+      clickNode(target){
+        console.log('you clicked '+ target)
       }
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Welcome to Your vtree App',
+      checkbox:true,
       datas:[
         {text:'xiaoming',
           id:'1',
@@ -41,7 +44,7 @@ export default {
                 children:[
                   {text:'1-1-1',
                     id:'1-1-1',
-                    icon:'file'
+                    icon:'file',
 
                   },{text:'1-1-2',
                     id:'1-1-2',
@@ -49,6 +52,10 @@ export default {
 
                   }]
               
+              },{
+                text:'1-2',
+                id:'1-2',
+                icon:'folder',
               }]
         },
         {text:'hua',
@@ -72,7 +79,7 @@ export default {
         ]
     }
   },
-  components:{mytree,vtree}
+  components:{vtree}
 }
 </script>
 
@@ -91,6 +98,10 @@ li {
 a {
   color: #42b983;
 }
-
+.tree{
+    float:left;
+    width:400px;
+    border:1px solid black;
+}
 
 </style>
