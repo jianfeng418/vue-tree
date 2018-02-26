@@ -2,6 +2,58 @@
 
 > A Vue.js project
 
+
+###初始化参数
+<table>
+  <tr>
+    <td>参数</td>
+    <td>类型</td>
+     <td>默认值</td>
+    <td>描述</td>
+  </tr> 
+    <tr>
+    <td>treeData</td>
+    <td>Array</td>
+     <td></td>
+    <td>数据源，包含'id','text'属性</td>
+  </tr>
+   <tr>
+    <td>checkBox</td>
+    <td>Boolen</td>
+     <td>false</td>
+    <td>是否显示checkbox</td>
+  </tr>
+   <tr>
+    <td>clickFun</td>
+    <td>Function</td>
+     <td></td>
+    <td>鼠标点击事件</td>
+  </tr>
+ </table>
+ 
+ ###方法
+ <table>
+    <tr>
+       <td>方法名称</td>
+      <td>参数</td>
+      <td>返回值</td>
+      <td>描述</td>
+    </tr>
+   <tr>
+       <td>getSelectedNode</td>
+      <td>-</td>
+      <td>返回选中的node节点</td>
+      <td></td>
+    </tr>
+    <tr>
+       <td>getCheckedNodes</td>
+      <td>-</td>
+      <td>返回多选的node节点</td>
+      <td>在多选属性checkbox为true时有效。</td>
+    </tr>
+  </table>
+ ###
+ 
 ## Build Setup
 
 ``` bash
