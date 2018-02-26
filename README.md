@@ -63,13 +63,13 @@
    <tr>
        <td>getSelectedNode</td>
       <td>-</td>
-      <td>返回选中的node节点</td>
+      <td>返回选中的tree节点</td>
       <td></td>
     </tr>
     <tr>
        <td>getCheckedNodes</td>
       <td>-</td>
-      <td>返回多选的node节点</td>
+      <td>返回多选的tree节点</td>
       <td>在多选属性checkbox为true时有效。</td>
     </tr>
   </table>
@@ -77,10 +77,10 @@
 ![Image text]( /vtree.png )
 ### 使用示例
 ```
-    <template><div class="hello">
-      <vtree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vtree>
-      <button @click='findSelected'>getNode</button></div>
-     </template>
+<template><div class="hello">
+  <vtree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vtree>
+  <button @click='findSelected'>getNode</button></div>
+</template>
 <script>
   import vtree from './v-tree'
   export default {
@@ -122,7 +122,7 @@
               },{
                 text:'1-2',
                 id:'1-2',
-                icon:'folder',
+                icon:'file',
               }]
         },
         {text:'hua',
