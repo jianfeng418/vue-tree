@@ -3,7 +3,7 @@
 > A Vue.js project
 
 
-###初始化参数
+### 初始化参数
 <table>
   <tr>
     <td>参数</td>
@@ -52,8 +52,7 @@
     <td>鼠标点击事件</td>
   </tr>
  </table>
-
- ###方法
+ 方法
  <table>
     <tr>
        <td>方法名称</td>
@@ -74,13 +73,10 @@
       <td>在多选属性checkbox为true时有效。</td>
     </tr>
   </table>
- ###
- 
- 
-![Image text]( /vtree.png )
-##使用示例
-<pre><code>
 
+![Image text]( /vtree.png )
+### 使用示例
+```
     <template><div class="hello">
       <vtree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vtree>
       <button @click='findSelected'>getNode</button></div>
@@ -153,16 +149,14 @@
   components:{vtree}
 }
 </script>
-
 <style scoped>
 .hello{
     float:left;
     width:400px;
     border:1px solid black;
 }
-
 </style>
-</pre></code>
+```
 ## Build Setup
 
 ``` bash
