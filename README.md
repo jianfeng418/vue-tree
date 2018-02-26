@@ -15,7 +15,29 @@
     <td>treeData</td>
     <td>Array</td>
      <td></td>
-    <td>数据源，包含'id','text'属性</td>
+    <td>数据源，包含'id','text','icon','children'属性。<br/>示例：[
+        {text:'xiaoming',
+          id:'1',
+          icon:'folder',
+          children:[
+              {text:'1-1',
+                id:'1-1',
+                icon:'folder',
+                children:[
+                  {text:'1-1-1',
+                    id:'1-1-1',
+                    icon:'file',
+                  },{text:'1-1-2',
+                    id:'1-1-2',
+                    icon:'file'
+                  }]
+              },{
+                text:'1-2',
+                id:'1-2',
+                icon:'folder',
+              }]
+        }
+        ]</td>
   </tr>
    <tr>
     <td>checkBox</td>
