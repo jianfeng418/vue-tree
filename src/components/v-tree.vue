@@ -189,7 +189,7 @@
 		
 	}
 	
-	li:first-child .cus_item_content span.treeExpandBtn.butopen{
+	.cus_vtree_wrap>ul> li:first-child>.cus_item_content>span.treeExpandBtn.butopen{
 		background-position:-92px 0px
 	}
 	li .cus_item_content span.treeExpandBtn.butopen{
@@ -202,7 +202,7 @@
 		background-position:-92px -54px
 	}
 
-	li:first-child .cus_item_content span.treeExpandBtn.btnclose{
+	.cus_vtree_wrap>ul> li:first-child>.cus_item_content>span.treeExpandBtn.btnclose{
 		background-position:-74px -0px
 	}
 	li .cus_item_content span.treeExpandBtn.btnclose{

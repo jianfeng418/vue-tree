@@ -55,7 +55,7 @@ export default {
               },{
                 text:'1-2',
                 id:'1-2',
-                icon:'folder',
+                icon:'file',
               }]
         },
         {text:'hua',
@@ -99,7 +99,8 @@ a {
   color: #42b983;
 }
 .tree{
-    float:left;
+    //float:left;
+    margin:10px auto;
     width:400px;
     border:1px solid black;
 }
