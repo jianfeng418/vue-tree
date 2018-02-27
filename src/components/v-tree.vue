@@ -160,7 +160,7 @@
 </script>
 
 <style>
-	.cus_vtree_wrap ul:first-child{
+	.cus_vtree_wrap>ul:first-child{
 		background-image:none;
 	}
 	 ul.cus_tree_ul{
