@@ -96,7 +96,7 @@
 			template:'<ul class="cus_tree_ul" :class="{cus_tree_ulLine:(treeData && treeData.length)}"><li v-for="item in treeData"><div class="cus_item_content" @click="clickNode(item)" @click.cus="clickFun(JSON.stringify({id:item.id,text:item.text}))" :id= item.id   :class="{active:item.active}">'+
 			'<span class="treeExpandBtn" @click.stop="toggleNode(item)" :class="{butopen:item.expand && item.children,btnclose:!item.expand && item.children,line: !item.last && !item.children,lastLine:item.last&&!item.children}"></span><span :class="item.icon"></span>'+
 			'<span v-if="checkBox" @click="checkBoxClick(item)" class="cus_chekcbox" :class="{cus_chekcbox_checked:item.checked,cus_chekcbox_part_checked:item.partchecked}"></span>{{item.text}}</div>'+
-			'<v-tree-item :treeData="item.children" :node="item"  v-if="item.expand" :clickFun="clickFun" :checkBox="checkBox" :class="{cus_checkbox_allchecked:item.checked}" @toggleCheckBox="checkBoxFun(item)" ></v-tree-item> </li></ul>',
+			'<v-tree-item :treeData="item.children"  v-if="item.expand" :clickFun="clickFun" :checkBox="checkBox" :class="{cus_checkbox_allchecked:item.checked}" @toggleCheckBox="checkBoxFun(item)" ></v-tree-item> </li></ul>',
 		
 			methods:{
 				clickNode(item){
@@ -169,7 +169,7 @@
 		background-position:4px 10px;
 		background-repeat:repeat-y;
 	}
-	li:last-child ul.cus_tree_ul:last-child{
+	li:last-child>ul.cus_tree_ul:last-child{
 		background-image:none;
 	}
 
@@ -198,7 +198,7 @@
 	li:last-child .cus_item_content span.treeExpandBtn.butopen{
 		background-position:-92px -36px
 	}
-	ul.tree_root_lonely>li>.cus_item_content>span.treeExpandBtn.butopen{
+	.cus_vtree_wrap ul.tree_root_lonely>li>.cus_item_content>span.treeExpandBtn.butopen{
 		background-position:-92px -54px
 	}
 
@@ -211,7 +211,7 @@
 	li:last-child .cus_item_content span.treeExpandBtn.btnclose{
 		background-position:-74px -36px
 	}
-	ul.tree_root_lonely>li>.cus_item_content>span.treeExpandBtn.btnclose{
+	.cus_vtree_wrap ul.tree_root_lonely>li>.cus_item_content>span.treeExpandBtn.btnclose{
 		background-position:-74px -54px
 	}
 

@@ -1,29 +1,19 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div class='tree'>
       <vtree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vtree>
-    </div>
     <button @click='findSelected'>获取选中项</button>
-
   </div>
 </template>
-
 <script>
-
   import vtree from './v-tree'
-
- 
-export default {
+  export default {
   name: 'HelloWorld',
   methods:{
-    
       findSelected(){
           console.log('you clicked' + JSON.stringify(this.$refs.vtree.getSelectedNode()));
           if(this.checkbox){
                console.log('you choosed ' + JSON.stringify(this.$refs.vtree.getCheckedNodes()))
           }
-         
       },
       clickNode(target){
         console.log('you clicked '+ target)
@@ -55,7 +45,17 @@ export default {
               },{
                 text:'1-2',
                 id:'1-2',
-                icon:'file',
+                icon:'folder',
+                children:[
+                  {text:'1-2-1',
+                    id:'1-2-1',
+                    icon:'file',
+
+                  },{text:'1-2-2',
+                    id:'1-2-2',
+                    icon:'file'
+
+                  }]
               }]
         },
         {text:'hua',
@@ -84,23 +84,8 @@ export default {
 </script>
 
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-.tree{
-    //float:left;
-    margin:10px auto;
+.hello{
+    
     width:400px;
     border:1px solid black;
 }
