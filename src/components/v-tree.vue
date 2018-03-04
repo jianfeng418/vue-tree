@@ -45,7 +45,7 @@
 						})
 					}
 				}
-				modifyDataFun(this.userData)
+				modifyDataFun(this.treeData)
 			},
 			clickNodeWrap(){
 				this.initData(false,true,false);
