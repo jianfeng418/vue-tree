@@ -132,7 +132,7 @@
 		},
 		components:{'v-tree-item':{
 			name:'v-tree-item',
-			template:'<ul class="cus_tree_ul" :class="{cus_tree_ulLine:(treeData && treeData.length)}"><li v-for="item in treeData"><div class="cus_item_content" @click="clickNode(item)" @click.cus="clickFun(JSON.stringify(item))" :id= item.id   :class="{active:item.active}">'+
+			template:'<ul class="cus_tree_ul" v-if="treeData && treeData.length" :class="{cus_tree_ulLine:(treeData && treeData.length)}"><li v-for="item in treeData"><div class="cus_item_content" @click="clickNode(item)" @click.cus="clickFun(JSON.stringify(item))" :id= item.id   :class="{active:item.active}">'+
 			'<span class="treeExpandBtn" @click.stop="toggleNode(item)" :class="{butopen:item.expand && item.children,btnclose:!item.expand && item.children,line: !item.last && !item.children,lastLine:item.last&&!item.children}"></span><span :class="item.icon"></span>'+
 			'<span v-if="checkBox" @click="checkBoxClick(item)" class="cus_chekcbox" :class="{cus_chekcbox_checked:item.checked,cus_chekcbox_part_checked:item.partchecked}"></span>{{item.text}}</div>'+
 			'<v-tree-item :treeData="item.children"  v-if="item.expand" :clickFun="clickFun" :checkBox="checkBox" :class="{cus_checkbox_allchecked:item.checked}" @toggleCheckBox="checkBoxFun(item)" ></v-tree-item> </li></ul>',
