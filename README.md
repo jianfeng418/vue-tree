@@ -55,6 +55,7 @@ Vue.use(vueTree);
     <td>是否显示checkbox</td>
   </tr>
  </table>
+ 
 ### treeData参数
 <table>
 <tr>
@@ -88,7 +89,9 @@ Vue.use(vueTree);
   <td>节点的子节点</td>
 </tr>
 </table>
+
 ### 方法
+
  <table>
     <tr>
        <td>方法名称</td>
@@ -141,7 +144,9 @@ ifClick：是否触发点击事件
       <td>获取所有祖先节点数据数组。</td>
     </tr>
   </table>
+  
 ### 事件说明
+
 <table>
 <tr>
 <td>事件名称</td>
