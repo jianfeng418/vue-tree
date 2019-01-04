@@ -167,11 +167,13 @@ ifClick：是否触发点击事件
 ### 使用示例
 ```
 <template><div class="hello">
-  <vtree :treeData='datas' ref='vtree' @clickNode='clickNode' :checkBox='checkbox'></vtree>
+  <vue-tree :treeData='datas' ref='vtree' @clickNode='clickNode' :checkBox='checkbox'></vue-tree>
   <button @click='findSelected'>getNode</button></div>
 </template>
 <script>
-  import vtree from './v-tree'
+  import Vue from 'vue'
+  import vueTree from 'vue-tree-jf'
+  Vue.use(vueTree);
   export default {
   name: 'HelloWorld',
   methods:{
