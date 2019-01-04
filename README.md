@@ -1,5 +1,7 @@
 # v-tree
 
+## Usage
+
 npm install vue-tree-jf --save
 
 ```
