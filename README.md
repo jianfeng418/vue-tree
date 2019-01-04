@@ -156,7 +156,7 @@ ifClick：是否触发点击事件
 <td>节点点击时触发</td>
 </tr>
 </table>
-![Image text]( /vtree.png )
+![Image text]( vtree.png )
 ### 使用示例
 ```
 <template><div class="hello">
@@ -237,3 +237,4 @@ ifClick：是否触发点击事件
     border:1px solid black;
 }
 </style>
+```
