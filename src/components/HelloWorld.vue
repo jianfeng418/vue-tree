@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-      <vue-tree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vue-tree>
+      <vue-tree :treeData='datas' ref='vtree' @clickNode='clickNode' :checkBox='checkbox'></vue-tree>
     <button @click='findSelected'>获取选中项</button>
   </div>
 </template>
@@ -18,7 +18,7 @@
           }
       },
       clickNode(target){
-        console.log('you clicked '+ target)
+        console.log('you clicked '+ target.id)
       }
   },
   data () {

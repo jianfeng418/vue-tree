@@ -1,8 +1,17 @@
 # v-tree
 
-> A Vue.js project
+npm install vue-tree-jf --save
+
+```
+import vueTree from 'vue-tree-jf'
+
+Vue.use(vueTree);
 
 
+.....
+<vue-tree  :treeData='datas' ref='vtree' @clickNode ='clickNode' ></vue-tree>
+
+```
 ### 初始化参数
 <table>
   <tr>
