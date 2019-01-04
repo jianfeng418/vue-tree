@@ -54,13 +54,40 @@ Vue.use(vueTree);
      <td>false</td>
     <td>是否显示checkbox</td>
   </tr>
-   <tr>
-    <td>clickFun</td>
-    <td>Function</td>
-     <td></td>
-    <td>鼠标点击事件</td>
-  </tr>
  </table>
+ ### treeData参数
+<table>
+<tr>
+  <td>参数名称</td>
+  <td>类型</td>
+  <td>默认值</td>
+  <td>描述</td>
+</tr>
+<tr>
+  <td>text</td>
+  <td>String</td>
+  <td></td>
+  <td>节点名称</td>
+</tr>
+<tr>
+  <td>id</td>
+  <td>String</td>
+  <td></td>
+  <td>节点id</td>
+</tr>
+<tr>
+  <td>icon</td>
+  <td>String</td>
+  <td></td>
+  <td>节点图标</td>
+</tr>
+<tr>
+  <td>children</td>
+  <td>Array</td>
+  <td></td>
+  <td>节点的子节点</td>
+</tr>
+</table>
  ### 方法
  <table>
     <tr>
@@ -81,13 +108,59 @@ Vue.use(vueTree);
       <td>返回多选的tree节点</td>
       <td>在多选属性checkbox为true时有效。</td>
     </tr>
+    <tr>
+       <td>getRoot</td>
+      <td>-</td>
+      <td></td>
+      <td>获取树根节点。</td>
+    </tr>
+    <tr>
+       <td>findNode</td>
+      <td>nodeId</td>
+      <td>节点id</td>
+      <td>获根据id获取选中节点数据。</td>
+    </tr>
+    <tr>
+       <td>setSelectedNode</td>
+      <td>node,ifClick</td>
+      <td>node:节点数据，包含id字段即可。
+ifClick：是否触发点击事件
+</td>
+      <td>设置树节点选中。</td>
+    </tr>
+    <tr>
+       <td>getParentNode</td>
+      <td>node</td>
+      <td>node：节点对象（包含id属性即可）</td>
+      <td>获取父节点数据。</td>
+    </tr>
+     <tr>
+       <td>getParentNodesArr</td>
+      <td>node</td>
+      <td>node：节点对象（包含id属性即可）</td>
+      <td>获取所有祖先节点数据数组。</td>
+    </tr>
   </table>
-
+### 事件说明
+<table>
+<tr>
+<td>事件名称</td>
+<td>参数</td>
+<td>参数说明</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>clickNode</td>
+<td>node</td>
+<td>当前点击节点的数据</td>
+<td>节点点击时触发</td>
+</tr>
+</table>
 ![Image text]( /vtree.png )
 ### 使用示例
 ```
 <template><div class="hello">
-  <vtree :treeData='datas' ref='vtree' :clickFun='clickNode' :checkBox='checkbox'></vtree>
+  <vtree :treeData='datas' ref='vtree' @clickNode='clickNode' :checkBox='checkbox'></vtree>
   <button @click='findSelected'>getNode</button></div>
 </template>
 <script>
@@ -102,7 +175,7 @@ Vue.use(vueTree);
           }
       },
       clickNode(target){
-        console.log('you clicked '+ target)
+        console.log('you clicked '+ target.id)
       }
   },
   data () {
@@ -155,7 +228,6 @@ Vue.use(vueTree);
         ]
     }
   },
-  components:{vtree}
 }
 </script>
 <style scoped>
@@ -165,21 +237,3 @@ Vue.use(vueTree);
     border:1px solid black;
 }
 </style>
-```
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
