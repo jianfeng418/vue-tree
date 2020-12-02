@@ -56,6 +56,12 @@ Vue.use(vueTree);
      <td>false</td>
     <td>是否显示checkbox</td>
   </tr>
+  <tr>
+    <td>transitionTime</td>
+    <td>Number</td>
+     <td>200</td>
+    <td>折叠动画时间，单位ms</td>
+  </tr>
  </table>
  
 ### treeData参数
