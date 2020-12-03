@@ -1,8 +1,8 @@
 # v-tree
 
 ## Usage
-
-npm install vue-tree-jf --save
+1.npm install 下载依赖项
+2.npm install vue-tree-jf --save   下载vue-tree-jf组件
 
 ```
 import vueTree from 'vue-tree-jf'
