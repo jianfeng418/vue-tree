@@ -66,7 +66,7 @@ Vue.use(vueTree);
     <td>expand</td>
     <td>Boolean</td>
      <td>true</td>
-    <td>初始化时折叠状态</td>
+    <td>初始化时折节点展开状态</td>
   </tr>
  </table>
  
