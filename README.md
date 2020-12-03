@@ -52,7 +52,7 @@ Vue.use(vueTree);
   </tr>
    <tr>
     <td>checkBox</td>
-    <td>Boolen</td>
+    <td>Boolean</td>
      <td>false</td>
     <td>是否显示checkbox</td>
   </tr>
@@ -61,6 +61,12 @@ Vue.use(vueTree);
     <td>Number</td>
      <td>200</td>
     <td>折叠动画时间，单位ms</td>
+  </tr>
+  <tr>
+    <td>expand</td>
+    <td>Boolean</td>
+     <td>true</td>
+    <td>初始化时折叠状态</td>
   </tr>
  </table>
  
